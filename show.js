@@ -57,8 +57,8 @@ function updateSection1(data) {
         card.classList.add('card');
         const gifImage = document.createElement('img');
         gifImage.src = gifUrl;
-        gifImage.style.width = '400px';
-        gifImage.style.height = '250px';
+        image.style.width = '300px';
+        image.style.height = '450px';
         card.appendChild(gifImage);
         section1.appendChild(card);
     });
@@ -90,8 +90,8 @@ function updateSection3(data) {
         const video = document.createElement('video');
         video.src = videoUrl;
         video.controls = true;
-        video.style.width = '350px';
-        video.style.height = '200px';
+        image.style.width = '300px';
+        image.style.height = '450px';
         card.appendChild(video);
         section3.appendChild(card);
     });
