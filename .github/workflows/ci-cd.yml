@@ -1,4 +1,4 @@
-name: Detail Scraping CI/CD
+name: Web Scraping CI/CD
 
 on:
   push:
@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Data saving Script
+      - name: Run Web Scraping Script
         run: |
           if [[ "${{ steps.check-draft.outputs.skip_workflow }}" == "false" ]]; then
             node newData.js
@@ -47,5 +47,5 @@ jobs:
       - name: Upload JSON artifact
         uses: actions/upload-artifact@v2
         with:
-          name: saved  Data
+          name: Data
           path: newData.json
