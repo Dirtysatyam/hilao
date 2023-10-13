@@ -5,7 +5,7 @@
     "porn-x": "^1.0.54",
     "puppeteer": "^21.3.8"
   },
-  
+  "type": "module",
   "scripts": {
     "start": "node app.js"
   }
