@@ -1,7 +1,11 @@
 const headername = document.getElementById('headername');
+const bio = document.getElementById('bio');
 const searchForm = document.querySelector('form');
 const randomButton = document.querySelector('#random'); // Assuming the random button has an ID of 'random'
 let allUserData; // Store all user data globally
+var navLinks = document.querySelectorAll('nav a');
+var biohref = document.getElementById("biohref");
+var sections = document.querySelectorAll('.sections');
 
 async function fetchAllData() {
     try {
@@ -78,6 +82,18 @@ function updateSection2(data) {
         card.appendChild(image);
         section2.appendChild(card);
     });
+
+    data.information.images.forEach(imageUrl => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        const image = document.createElement('img');
+        image.src = imageUrl;
+        image.style.width = '300px';
+        image.style.height = '450px';
+        card.appendChild(image);
+        section2.appendChild(card);
+    });
+
 }
 
 function updateSection3(data) {
@@ -105,10 +121,21 @@ function updateSections(data) {
 }
 
 searchForm.addEventListener('submit', async function (event) {
-    event.preventDefault();
 
+
+    event.preventDefault();
     const searchTerm = event.target.elements.search.value;
 
+
+    sections.forEach(function (section) {
+        section.style.display = 'none';
+      });
+ 
+bio.style.display='block';
+navLinks.forEach(function (navLink) {
+    navLink.classList.remove('active');
+  });
+  biohref.classList.add('active');
     try {
         const userData = await fetchData(searchTerm);
         updateSections(userData);
@@ -120,11 +147,17 @@ searchForm.addEventListener('submit', async function (event) {
         bioSection.innerHTML = '<h1>Make Sure u r writing the exact name. If u r sure then let us know ur star name , we will add her too.</h1>';
         const section1 = document.getElementById("section1");
         section1.innerHTML = '';
+        section1.style.setProperty
         const section2 = document.getElementById("section2");
         section2.innerHTML = '';
+        section1.style.setProperty
         const section3 = document.getElementById("section3");
         section3.innerHTML = '';
+        section1.style.setProperty
     }
+    
+
+  
 });
 
 function getRandomUserData() {
