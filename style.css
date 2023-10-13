@@ -49,6 +49,13 @@ input[type="submit"] {
   border: none;
   cursor: pointer;
 }
+input[type="button"] {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
 ////////////////////////////////
 
 #bio{
