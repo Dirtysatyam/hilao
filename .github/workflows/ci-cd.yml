@@ -41,7 +41,7 @@ jobs:
       - name: Run Data saving Script
         run: |
           if [[ "${{ steps.check-draft.outputs.skip_workflow }}" == "false" ]]; then
-            node script.js
+            node newData.js
           fi
 
       - name: Upload JSON artifact
