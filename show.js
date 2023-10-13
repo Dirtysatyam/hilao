@@ -32,7 +32,7 @@ function updateBioSection(data) {
     const bioSection = document.getElementById("bio");
     headername.innerText = data.name;
     bioSection.innerHTML = `
-    <p><strong>Name:</strong> ${data.information.name}</p>
+    <p><strong>Name:</strong> ${data.name}</p>
     <p><strong>Age:</strong> ${data.information.age}</p>
     <p><strong>boobsType:</strong> ${data.information.boobsType}</p>
     <p><strong>tattoos:</strong> ${data.information.tattoos}</p>
