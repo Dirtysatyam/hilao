@@ -61,7 +61,7 @@ function updateSection1(data) {
         card.classList.add('card');
         const gifImage = document.createElement('img');
         gifImage.src = gifUrl;
-        gifImage.style.width = '300px';
+        gifImage.style.width = '400px';
         gifImage.style.height = '450px';
         card.appendChild(gifImage);
         section1.appendChild(card);
